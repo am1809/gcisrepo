@@ -1,0 +1,56 @@
+def choose_operation():
+    print("Welcome to the Python calculator!")
+    print("Which operation would you like to perform?")
+    print("1 - Addition")
+    print("2 - Subtraction")
+    print("3 - Multiplication")
+    print("4 - Division")
+
+    operation=int(input("Enter your operation:"))
+    return operation
+
+def enter_operand(operand_number):
+    if operand_number == "first":
+        operand = int(input("Enter your first operand: "))
+    else:
+        operand = int(input("Enter your second operand: "))
+
+    return operand
+
+def get_division_type():
+    print("What type of division would you like to do?")
+    print("1 - Regular Division")
+    print("2 - Integer Division")
+
+    division_type = int(input("Enter your choice: "))
+    return division_type
+
+def main():
+    operation = choose_operation()
+
+    operand1 = enter_operand("first")
+    operand2 = enter_operand("second")
+
+    if operation == 1:
+        result = operand1 + operand2
+        print("Result:", result)
+
+    elif operation == 2:
+        result = operand1 - operand2
+        print("Result:", result)
+
+    elif operation == 3:
+        result = operand1 * operand2
+        print("Result:", result)
+
+    elif operation == 4:
+        division_type = get_division_type()
+
+    if division_type == 1:
+        result = operand1 / operand2
+        print("Result:", result)
+    elif division_type == 2:
+        result = operand1 // operand2
+        print("Result:", result)
+
+main()
